@@ -5,7 +5,7 @@ function Nav() {
     {
       name: "webApps",
       title: "Web Apps",
-      description: "Deployed full stack web applications, each usind MVC development structure and back end databases."
+      description: "Deployed full stack web applications, each using MVC development structure and back end databases."
     },
     {
       name: "basicApps",
@@ -27,7 +27,7 @@ function Nav() {
     <header>
       <h2>
         <a href="/">
-          <span role="img" aria-label="rocketShip">🚀</span> Woosh!
+          <span role="img" aria-label="rocketShip">🚀</span> Elijah Kanellakis
         </a>
       </h2>
       <nav>
