@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 
 function Nav(props) {
 
@@ -7,6 +7,10 @@ function Nav(props) {
     setCurrentCategory,
     currentCategory,
   } = props;
+
+useEffect(() => {
+  document.title = (currentCategory.title);
+}, [currentCategory]);
 
   return (
     <header>
