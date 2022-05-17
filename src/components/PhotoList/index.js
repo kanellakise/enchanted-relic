@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import Modal from '../Modal';
 
 function PhotoList({ category }) {
 
@@ -35,15 +36,41 @@ function PhotoList({ category }) {
       technologiesUsed: 'MySQL, Sequelize, custom RESTful API, JavaScript, Bulma, HTML5, CSS3, Created by a Dev group',
       deployedSite: 'https://rough-stock-rodeo.herokuapp.com/',
       gitHubRepo: 'https://github.com/kanellakise/roughStockRodeo-Group7-Project2'
-    }
+    },
+    // {
+    //   title: '',
+    //   category: 'basicApps',
+    //   description: '',
+    //   technologiesUsed: '',
+    //   deployedSite: '',
+    //   gitHubRepo: ''
+    // },
+    // {
+    //   title: '',
+    //   category: 'basicApps',
+    //   description: '',
+    //   technologiesUsed: '',
+    //   deployedSite: '',
+    //   gitHubRepo: ''
+    // },
+    // {
+    //   title: '',
+    //   category: 'basicApps',
+    //   description: '',
+    //   technologiesUsed: '',
+    //   deployedSite: '',
+    //   gitHubRepo: ''
+    // },
   ]);
+
+  const currentPhotos = photos.filter((photo) => photo.category === category);
 
   return (
     <div>
       <div className="flexRow">
-        {photos.map((image, i) => (
+        {currentPhotos.map((image, i) => (
           <img
-            src={require(`../../assets/small/${category}/${i}.png`).default}
+            src={require(`../../assets/small/${category}/${i}.png`)}
             alt={image.title}
             className="img-thumbnail mx-1"
             key={image.title}
@@ -52,6 +79,6 @@ function PhotoList({ category }) {
       </div>
     </div>
   );
-}
+};
 
 export default PhotoList;
