@@ -3,6 +3,7 @@ import './App.css';
 import About from './components/About';
 import Nav from './components/Nav';
 import Gallery from "./components/Gallery";
+import ContactDisplay from './components/Contact';
 
 function App() {
 
@@ -29,16 +30,19 @@ function App() {
   return (
     <div>
       <Nav
-      categories={categories}
-      setCurrentCategory={setCurrentCategory}
-      currentCategory={currentCategory}
+        categories={categories}
+        setCurrentCategory={setCurrentCategory}
+        currentCategory={currentCategory}
       ></Nav>
       <main>
         <Gallery
-        currentCategory={currentCategory}
+          currentCategory={currentCategory}
         ></Gallery>
+        <ContactDisplay></ContactDisplay>
         <About></About>
       </main>
+      <footer>
+      </footer>
     </div>
   );
 }
