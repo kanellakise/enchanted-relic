@@ -1,33 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Nav() {
-  const categories = [
-    {
-      name: "webApps",
-      title: "Web Apps",
-      description: "Deployed full stack web applications, each using MVC development structure and back end databases."
-    },
-    {
-      name: "basicApps",
-      title: "Basic Apps",
-      description: "These applications were created using HTML5, CSS3, some JavaScript, and are deployed directly to GitHub Pages."
-    },
-    {
-      name: "commandLineApps",
-      title: "Command Line Apps",
-      description: "These applications require to be run through the command line with help of Node.js."
-    }
-  ]
+function Nav(props) {
 
-  function categorySelected(name) {
-    console.log(`${name} clicked`)
-  }
+  const {
+    categories = [],
+    setCurrentCategory,
+    currentCategory,
+  } = props;
 
   return (
     <header>
       <h2>
         <a href="/">
-          <span role="img" aria-label="rocketShip">🚀</span> Elijah Kanellakis
+          <span role="img" aria-label="rocketShip">
+            {" "}
+            🚀
+            {" "}
+          </span>{" "}
+          Elijah Kanellakis
         </a>
       </h2>
       <nav>
@@ -45,10 +35,13 @@ function Nav() {
           </li>
           {categories.map((category) => (
             <li
-              className="mx-1"
-              key={category.name}
+              className={`mx-1 ${currentCategory.name === category.name && 'navActive'
+                }`} key={category.name}
             >
-              <span onClick={() => categorySelected(category.name)}>
+              <span onClick={() => {
+                setCurrentCategory(category)
+              }}
+              >
                 {category.title}
               </span>
             </li>
