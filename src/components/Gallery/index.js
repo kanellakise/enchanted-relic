@@ -1,24 +1,14 @@
 import React from 'react';
-import photo from "../../assets/small/webApps/fullFill.png"
+import PhotoList from '../PhotoList';
 
-function Gallery(props) {
-  const currentCategory = {
-    name: "webApps",
-    description:
-      "Deployed full stack web applications, each using MVC development structure and back end databases."
-  };
+function Gallery({ currentCategory }) {
+  const { title, description } = currentCategory;
 
   return (
     <section>
-      <h1>{currentCategory.name}</h1>
-      <p>{currentCategory.description}</p>
-      <div className="flex-row">
-        <img
-          src={photo}
-          alt="Web App Example"
-          className="img-thumbnail mx-1"
-        />
-      </div>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <PhotoList category={currentCategory.name} />
     </section>
   );
 }
