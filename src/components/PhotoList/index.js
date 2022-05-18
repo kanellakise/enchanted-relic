@@ -3,8 +3,6 @@ import Modal from '../Modal';
 
 function PhotoList({ category }) {
 
-  const [currentPhoto, setCurrentPhoto] = useState();
-
   // May implement function to separate technologies used into buttons/badges
   const [photos] = useState([
     {
@@ -19,7 +17,7 @@ function PhotoList({ category }) {
       title: "Ye Olde Tech Blog",
       category: 'webApps',
       description: 'This is a Full Stack, Single Page Application where users from throughout time can create an account, sign in, create posts, and comment on posts about their technological discoveries throughout history.',
-      technologiesUsed: 'MVC structure, MySQL, custom RESTful API, JavaScript, Express, Sequelize, Handlebars, bcrypt, dotenv, Bulma, HTML5, CSS3, Deployed to Heroku, Created personally',
+      technologiesUsed: 'MVC structure, MySQL, Custom RESTful API, JavaScript, Express, Sequelize, Handlebars, Bcrypt, Dotenv, Bulma, HTML5, CSS3, Deployed to Heroku, Solo Project',
       deployedSite: 'https://fast-basin-96296.herokuapp.com/',
       gitHubRepo: 'https://github.com/kanellakise/MVC-techBlog-ELK-Wk14'
     },
@@ -27,7 +25,7 @@ function PhotoList({ category }) {
       title: 'Weather GiFinder',
       category: 'webApps',
       description: 'Weather GiFinder is an easy-to-use Front End application, where users may search for a location and receive not only weather data for that area, but 3 gifs related to the area and the current weather status.',
-      technologiesUsed: 'Two third party APIs, JavaScript, Bulma, HTML5, CSS3, Created by a Dev group',
+      technologiesUsed: 'Two third party APIs, JavaScript, Bulma, HTML5, CSS3, Group Project',
       deployedSite: 'https://kanellakise.github.io/group1-groupProject1/',
       gitHubRepo: 'https://github.com/kanellakise/group1-groupProject1.git'
     },
@@ -35,7 +33,7 @@ function PhotoList({ category }) {
       title: 'Rough Stock Rodeo',
       category: 'webApps',
       description: 'Rough Stock Rodeo is a Full Stack, Single Page Application where users may sign up, sign in, and register, edit, and delete their contestants from a roster for a rodeo event.',
-      technologiesUsed: 'MySQL, Sequelize, custom RESTful API, JavaScript, Bulma, HTML5, CSS3, Created by a Dev group',
+      technologiesUsed: 'MySQL, Sequelize, Custom RESTful API, JavaScript, Bulma, HTML5, CSS3, Group Project',
       deployedSite: 'https://rough-stock-rodeo.herokuapp.com/',
       gitHubRepo: 'https://github.com/kanellakise/roughStockRodeo-Group7-Project2'
     },
@@ -65,15 +63,20 @@ function PhotoList({ category }) {
     // },
   ]);
 
+  const [currentPhoto, setCurrentPhoto] = useState();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const currentPhotos = photos.filter((photo) => photo.category === category);
 
   const toggleModal = (image, i) => {
     setCurrentPhoto({...image, index: i});
+    setIsModalOpen(true);
   }
 
   return (
     <div>
-      <Modal currentPhoto={currentPhoto} />
+      {isModalOpen && <Modal currentPhoto={currentPhoto} />}
       <div className="flexRow">
         {currentPhotos.map((image, i) => (
           <img

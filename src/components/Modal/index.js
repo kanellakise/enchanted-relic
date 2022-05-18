@@ -1,15 +1,15 @@
 import React from 'react';
 
-function Modal(currentPhoto) {
+function Modal({currentPhoto}) {
 
-  const {title, category, description, technologiesUsed, deployedSite, gitHubRepo} = currentPhoto;
+  const {title, category, description, technologiesUsed, deployedSite, gitHubRepo, index} = currentPhoto;
 
   return (
 
     <div className='modalBackdrop'>
       <div className='modalContainer'>
         <h3 className='modalTitle'>{title}</h3>
-        <img alt={`${category}`} />
+        <img src={require(`../../assets/large/${category}/${index}.png`)} alt={`${title}`} />
 
         <h4>Description</h4>
         <p>
