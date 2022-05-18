@@ -84,7 +84,7 @@ function PhotoList({ category }) {
           <img
             src={require(`../../assets/small/${category}/${i}.png`)}
             alt={image.title}
-            className="img-thumbnail mx-1"
+            className="modal-trigger"
             onClick={() => toggleModal(image, i)}
             key={image.title}
           />

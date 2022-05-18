@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import coverImage from "../../assets/cover/cover-image.jpeg";
+// import avatar from '../../assets/cover/epic.jpeg';
 
 function Nav(props) {
 
@@ -16,16 +18,13 @@ function Nav(props) {
 
   return (
     <header>
-      <h2>
+      <div>
+      <img src={coverImage} className="my-2" style={{ width: "100%" }} alt="cover" />
+      <h1>
         <a href="/">
-          <span role="img" aria-label="rocketShip">
-            {" "}
-            🚀
-            {" "}
-          </span>{" "}
           Elijah Kanellakis
         </a>
-      </h2>
+      </h1>
       <nav>
         <ul className="flex-row">
           <li className="mx-2">
@@ -56,6 +55,7 @@ function Nav(props) {
           ))}
         </ul>
       </nav>
+      </div>
     </header>
   );
 }
