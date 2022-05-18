@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Modal({currentPhoto}) {
+function Modal({ onClose, currentPhoto }) {
 
   const {title, category, description, technologiesUsed, deployedSite, gitHubRepo, index} = currentPhoto;
 
@@ -25,8 +25,8 @@ function Modal({currentPhoto}) {
         <a href={`${gitHubRepo}`} target='about_blank'>
           GitHub Repository
         </a>
-        <button type='button'>
-          Close this modal
+        <button onClick={onClose} type='button'>
+          Close
         </button>
       </div>
     </div>
