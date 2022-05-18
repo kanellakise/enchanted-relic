@@ -14,15 +14,15 @@ function ContactDisplay() {
         </li>
 
         <li>
-          <a href="https://github.com/kanellakise" target="_blank">GitHub</a>
+          <a href="https://github.com/kanellakise" target="_blank" rel="noreferrer">GitHub</a>
         </li>
 
         <li>
-          <a href="https://twitter.com/Deathsbydusk" target="_blank">Twitter</a>
+          <a href="https://twitter.com/Deathsbydusk" target="_blank" rel="noreferrer">Twitter</a>
         </li>
 
         <li>
-          <a href="https://open.spotify.com/user/deathbydusk?si=6ccc9629bb784f92" target="_blank">Spotify</a>
+          <a href="https://open.spotify.com/user/deathbydusk?si=6ccc9629bb784f92" target="_blank" rel="noreferrer">Spotify</a>
         </li>
       </ul>
     </nav>
