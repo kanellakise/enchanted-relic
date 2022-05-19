@@ -19,42 +19,40 @@ function Nav(props) {
   return (
     <header>
       <div>
-      <img src={coverImage} className="my-2" style={{ width: "100%" }} alt="cover" />
-      <h1>
-        <a href="/">
-          Elijah Kanellakis
-        </a>
-      </h1>
-      <nav>
-        <ul className="flex-row">
-          <li className="mx-2">
-            <a href="#about" onClick={() => setContactSelected(false)}>
-              About Me
-            </a>
-          </li>
-          <li className={`mx-2 ${contactSelected && 'navActive'}`}>
-            <span onClick={() => setContactSelected(true)}>Contact</span>
-          </li>
-          <li className="mx-2">
-            <a href="https://drive.google.com/file/d/1rmrTVq4HOX8tmwCUQY8sUeiLhjWYpm3U/view?usp=sharing" target="about_blank">Resume</a>
-          </li>
-          {categories.map((category) => (
-            <li
-              className={`mx-1 ${currentCategory.name === category.name && !contactSelected && 'navActive'
-                }`}
-              key={category.name}
-            >
-              <span onClick={() => {
-                setCurrentCategory(category);
-                setContactSelected(false);
-              }}
-              >
-                {category.title}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </nav>
+        <img src={coverImage} className="my-2" style={{ width: "100%" }} alt="cover" />
+        <nav>
+          <div className='nav-wrapper'>
+            <a href="#!" className='brand-logo'>Elijah Kanellakis</a>
+            <ul id='nav-mobile' className="right hide-on-med-and-down">
+              <li className="">
+                <a href="#about" onClick={() => setContactSelected(false)}>
+                  About Me
+                </a>
+              </li>
+              <li className={`${contactSelected && 'navActive'}`}>
+                <span onClick={() => setContactSelected(true)}>Contact</span>
+              </li>
+              <li className=''>
+                <a href="https://drive.google.com/file/d/1rmrTVq4HOX8tmwCUQY8sUeiLhjWYpm3U/view?usp=sharing" target="about_blank">Resume</a>
+              </li>
+              {categories.map((category) => (
+                <li
+                  className={`${currentCategory.name === category.name && !contactSelected && 'navActive'
+                    }`}
+                  key={category.name}
+                >
+                  <span onClick={() => {
+                    setCurrentCategory(category);
+                    setContactSelected(false);
+                  }}
+                  >
+                    {category.title}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
       </div>
     </header>
   );

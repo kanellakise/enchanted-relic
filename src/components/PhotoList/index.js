@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import M from 'materialize-css';
 import Modal from '../Modal';
 
 function PhotoList({ category }) {
@@ -56,6 +57,30 @@ function PhotoList({ category }) {
     // {
     //   title: '',
     //   category: 'basicApps',
+    //   description: '',
+    //   technologiesUsed: '',
+    //   deployedSite: '',
+    //   gitHubRepo: ''
+    // },
+    // {
+    //   title: '',
+    //   category: 'commandLineApps',
+    //   description: '',
+    //   technologiesUsed: '',
+    //   deployedSite: '',
+    //   gitHubRepo: ''
+    // },
+    // {
+    //   title: '',
+    //   category: 'commandLineApps',
+    //   description: '',
+    //   technologiesUsed: '',
+    //   deployedSite: '',
+    //   gitHubRepo: ''
+    // },
+    // {
+    //   title: '',
+    //   category: 'commandLineApps',
     //   description: '',
     //   technologiesUsed: '',
     //   deployedSite: '',
